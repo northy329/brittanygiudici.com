@@ -7,91 +7,114 @@
 <meta name="description" content="Brittany Giudici: executive communications leader, keynote speaker, founder of Treasure Valley Women in Tech and The Giudici Group.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /*
-VOICE: senior, composed, understated; reads like a board bio, not a brochure
-IDEA: the portrait page of an annual report, a leader photographed with quiet confidence
-PICTURE: her headshot, large and tall, beside a calm statement
-COLOUR and TYPE: white, deep ink, one restrained claret; Newsreader display + Public Sans text
-LAYOUT: portrait-led cover, then sections with hanging titles on a single grid, generous air, thin rules
+VOICE: senior, composed, confident; a board bio with some edge
+IDEA: an editorial feature spread on a communicator; quotation marks are her material
+PICTURE: her headshot set on deep navy, offset over a blush frame, a giant quote mark behind
+COLOUR and TYPE: navy (from her dress) dominant, blush support, white; Newsreader + Public Sans
+LAYOUT: navy cover, blush fact strip, white and navy bands alternating, a pull-quote band mid-page
 */
 :root{color-scheme:light dark;
---bg:light-dark(#ffffff,#121214);
---ink:light-dark(#1c1b1f,#ecebee);
---soft:light-dark(#5f5c66,#a9a6b0);
---rule:light-dark(#e4e2e7,#2c2b31);
---tint:light-dark(#f6f5f7,#19191c);
---accent:light-dark(#8c1d40,#e07a99)}
+--navy:#14213d;--deep:#0c1529;--blush:#efcfc8;--blush2:#f8e9e5;
+--bg:light-dark(#ffffff,#0f1626);
+--ink:light-dark(#14213d,#eef0f5);
+--soft:light-dark(#525b70,#a7afc2);
+--rule:light-dark(#dfe2ea,#25304a)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:80px;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Public Sans",system-ui,sans-serif;overflow-x:clip}
-a{color:inherit;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:4px}
-a:hover{text-decoration-color:var(--accent);color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:2px solid var(--blush);outline-offset:3px}
 h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
-h2{font-size:clamp(30px,3.6vw,40px)}
+h2{font-size:clamp(32px,3.8vw,44px)}
 h3{font-size:22px;line-height:1.25;font-weight:500}
 p{margin:0 0 1em;max-width:64ch}
 .wrap{max-width:1160px;margin:0 auto;padding:0 max(5vw,20px)}
+.navy{background:var(--navy);color:#fff}
+.navy p,.navy .k{color:#c9d0e0}
 
-header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 24px;min-height:68px}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--deep) 94%,transparent);backdrop-filter:blur(8px);color:#fff}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 24px;min-height:68px}
 .mark{font-family:Newsreader,serif;font-size:21px;text-decoration:none}
-nav{display:flex;flex-wrap:wrap;gap:2px 22px}
-nav a{text-decoration:none;font-size:15px;color:var(--soft);padding:10px 0}
-nav a:hover{color:var(--ink)}
+nav{display:flex;flex-wrap:wrap;gap:0 22px}
+nav a{text-decoration:none;font-size:15px;color:#c9d0e0;padding:12px 0}
+nav a:hover{color:var(--blush)}
 
 /* cover */
-.cover .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,88px);align-items:center;padding-block:clamp(40px,6vw,88px)}
-.portrait{position:relative;aspect-ratio:4/5;background:var(--tint);overflow:hidden}
-.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;animation:in 1.2s ease-out both}
-.portrait span{position:absolute;inset:0;display:grid;place-items:center;color:var(--soft);font-size:15px}
-@keyframes in{from{opacity:0}to{opacity:1}}
-.cover h1{font-size:clamp(46px,6.4vw,84px);line-height:1;letter-spacing:-.015em}
-.role{font-size:18px;color:var(--soft);margin:18px 0 28px}
-.lede{font-family:Newsreader,serif;font-size:clamp(22px,2.3vw,28px);line-height:1.35;max-width:30ch;margin:0 0 32px;padding-top:28px;border-top:1px solid var(--rule)}
+.cover{position:relative;overflow:hidden}
+.cover::before{content:"\201C";position:absolute;right:-2vw;top:-.18em;font:400 clamp(360px,48vw,720px)/1 Newsreader,serif;color:rgba(239,207,200,.07);pointer-events:none}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/80px 80px;mask:linear-gradient(90deg,transparent 40%,#000);pointer-events:none}
+.cover .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,7vw,104px);align-items:center;padding-block:clamp(48px,7vw,104px)}
+.frame{position:relative;margin:0 24px 24px 0}
+.frame::before{content:"";position:absolute;inset:24px -24px -24px 24px;background:var(--blush)}
+.frame::after{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(239,207,200,.5)}
+.portrait{position:relative;z-index:1;aspect-ratio:4/5;background:#6f7385;overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;animation:in 1.2s ease-out both}
+@keyframes in{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+.cover h1{font-size:clamp(48px,6.6vw,88px);line-height:.98;letter-spacing:-.015em}
+.role{font-size:18px;color:var(--blush);margin:20px 0 32px}
+.lede{font-family:Newsreader,serif;font-style:italic;font-size:clamp(23px,2.4vw,30px);line-height:1.35;max-width:28ch;margin:0 0 36px;color:#fff}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink)}
-.btn.solid{background:var(--ink);color:var(--bg)}
-.btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.btn:not(.solid):hover{border-color:var(--accent)}
-@media(max-width:760px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.portrait{max-width:420px;aspect-ratio:1/1}}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid currentColor}
+.btn.solid{background:var(--blush);border-color:var(--blush);color:var(--navy)}
+.btn.solid:hover{background:#fff;border-color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.1)}
+.btn.dark{border-color:var(--ink);color:var(--ink)}
+.btn.dark:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:780px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.frame{max-width:400px}.portrait{aspect-ratio:1/1}}
 
 /* facts */
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.facts div{padding:26px 24px 26px 0}
-.facts div+div{padding-left:24px;border-left:1px solid var(--rule)}
-.facts b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:clamp(28px,3vw,36px);line-height:1.1}
-.facts span{color:var(--soft);font-size:15px}
-@media(max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}}
+.facts{background:var(--blush);color:var(--navy)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts div{padding:30px 24px 30px 0}
+.facts div+div{padding-left:24px;border-left:1px solid rgba(20,33,61,.18)}
+.facts b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:clamp(30px,3.2vw,40px);line-height:1.1}
+.facts span{font-size:15px;color:#3b4560}
+@media(max-width:760px){.facts .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid rgba(20,33,61,.18)}}
 
 /* sections */
-section.s{padding-block:clamp(56px,7vw,104px)}
-.tint{background:var(--tint)}
+section.s{padding-block:clamp(60px,7.5vw,112px)}
 .sec{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px 64px}
 .sec>h2{position:sticky;top:100px;align-self:start}
-@media(max-width:860px){.sec{grid-template-columns:minmax(0,1fr)}.sec>h2{position:static}}
+.sec>h2::after{content:"";display:block;width:56px;height:56px;margin-top:22px;border-radius:50%;border:1px solid var(--blush);background:radial-gradient(circle,var(--blush) 0 5px,transparent 6px)}
+@media(max-width:860px){.sec{grid-template-columns:minmax(0,1fr)}.sec>h2{position:static}.sec>h2::after{display:none}}
 .list{list-style:none;margin:8px 0 0;padding:0}
 .list li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:4px 28px;padding:22px 0;border-top:1px solid var(--rule)}
 .list li:last-child{border-bottom:1px solid var(--rule)}
-.list .k{color:var(--soft);font-size:15px;white-space:nowrap;padding-top:3px}
+.navy .list li{border-color:rgba(255,255,255,.14)}
+.k{color:var(--soft);font-size:15px;white-space:nowrap;padding-top:3px}
 .list p{margin:4px 0 0;color:var(--soft);font-size:16px}
 @media(max-width:560px){.list li{grid-template-columns:minmax(0,1fr)}}
-.topics{color:var(--soft);font-size:16px;margin-top:24px}
-.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:8px}
-.svc div{padding:22px 0;border-top:1px solid var(--rule)}
-.svc p{margin:6px 0 0;color:var(--soft);font-size:16px}
+.note{color:var(--soft);font-size:16px;margin-top:24px}
+.navy .note{color:#c9d0e0}
+
+/* pull quote */
+.pull{background:var(--blush2);color:var(--navy);position:relative;overflow:hidden}
+:root[data-theme=dark] .pull{background:#1b2540;color:#fff}
+.pull .wrap{position:relative;padding-block:clamp(56px,7vw,96px)}
+.pull blockquote{margin:0;font:400 clamp(28px,3.6vw,46px)/1.2 Newsreader,serif;max-width:22ch;padding-left:clamp(56px,8vw,120px);position:relative;text-wrap:balance}
+.pull blockquote::before{content:"\201C";position:absolute;left:0;top:-.1em;font-size:2.6em;line-height:1;color:var(--navy);opacity:.9}
+:root[data-theme=dark] .pull blockquote::before{color:var(--blush)}
+.pull .shape{position:absolute;right:max(5vw,20px);top:50%;width:clamp(120px,20vw,260px);aspect-ratio:1;translate:0 -50%;border-radius:50%;border:1px solid rgba(20,33,61,.3)}
+.pull .shape::after{content:"";position:absolute;inset:18%;border-radius:50%;background:var(--navy);box-shadow:0 0 0 14px var(--blush)}
+@media(max-width:700px){.pull .shape{display:none}}
+
+/* consulting cards on navy */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:12px}
+.svc div{padding:26px;border:1px solid rgba(255,255,255,.16);position:relative}
+.svc div::before{content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;border-top:2px solid var(--blush);border-left:2px solid var(--blush)}
+.svc p{margin:8px 0 0;font-size:16px}
 @media(max-width:640px){.svc{grid-template-columns:minmax(0,1fr)}}
 
-.contact{background:var(--ink);color:var(--bg)}
-.contact .sec>div p{color:color-mix(in srgb,var(--bg) 75%,var(--ink))}
-.contact .btn{border-color:var(--bg);color:var(--bg)}
-.contact .btn.solid{background:var(--bg);color:var(--ink)}
-.contact .btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 60%,var(--ink));font-size:14px;border-top:1px solid color-mix(in srgb,var(--bg) 18%,var(--ink))}
+.contact{background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"\201D";position:absolute;left:-1vw;bottom:-.55em;font:400 clamp(280px,34vw,520px)/1 Newsreader,serif;color:rgba(239,207,200,.06)}
+.contact .wrap{position:relative}
+.contact p{color:#c9d0e0}
+footer{background:var(--deep);color:#8f99b1;font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-block:22px}
 </style>
 </head>
@@ -111,11 +134,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
 </header>
 
 <main id="top">
-<section class="cover">
+<section class="cover navy">
   <div class="wrap">
-    <div class="portrait">
-      <span>Headshot</span>
-      <img src="headshot.jpg" alt="Portrait of Brittany Giudici" onerror="this.remove()">
+    <div class="frame">
+      <div class="portrait"><img src="headshot.jpg" alt="Portrait of Brittany Giudici"></div>
     </div>
     <div>
       <h1>Brittany Giudici</h1>
@@ -123,14 +145,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
       <p class="lede">I help leaders say what they mean, especially when the stakes are high.</p>
       <div class="btns">
         <a class="btn solid" href="#contact">Get in touch</a>
-        <a class="btn" href="#speaking">Speaking</a>
+        <a class="btn line" href="#speaking">Speaking</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="wrap">
-  <div class="facts">
+<div class="facts">
+  <div class="wrap">
     <div><b>15+ years</b><span>in executive communications, PR and marketing</span></div>
     <div><b>80+</b><span>clients through The Giudici Group</span></div>
     <div><b>1,700+</b><span>members in Treasure Valley Women in Tech</span></div>
@@ -149,12 +171,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
         <li><span class="k">Oct 2026</span><div><h3>Keynote: Purpose Driven</h3><p>Boise Entrepreneur Week. Invited by Governor Brad Little.</p></div></li>
         <li><span class="k">Sep 2026</span><div><h3>Host, Leadership Up Close</h3><p>Treasure Valley Women in Tech panel, Boise Entrepreneur Week</p></div></li>
       </ul>
-      <p class="topics">Topics: purpose-driven leadership, crisis communication, executive presence, building community from zero, women in tech.</p>
+      <p class="note">Topics: purpose-driven leadership, crisis communication, executive presence, building community from zero, women in tech.</p>
     </div>
   </div>
 </section>
 
-<section class="s tint" id="work">
+<section class="pull" aria-label="Philosophy">
+  <div class="wrap">
+    <blockquote>The words a leader chooses in a hard moment are the ones people remember.</blockquote>
+    <div class="shape" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="s" id="work">
   <div class="wrap sec">
     <h2>Work</h2>
     <div>
@@ -165,12 +194,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
         <li><span class="k">Earlier</span><div><h3>SDL</h3><p>Corporate communications and PR.</p></div></li>
         <li><span class="k">Earlier</span><div><h3>Apple</h3><p>Early career during the iPhone 3GS years.</p></div></li>
       </ul>
-      <p class="topics">Education: Stanford, USC Annenberg, Bridgewater State University.</p>
+      <p class="note">Education: Stanford, USC Annenberg, Bridgewater State University.</p>
     </div>
   </div>
 </section>
 
-<section class="s" id="consulting">
+<section class="s navy" id="consulting">
   <div class="wrap sec">
     <h2>Consulting</h2>
     <div>
@@ -185,12 +214,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
   </div>
 </section>
 
-<section class="s tint" id="community">
+<section class="s" id="community">
   <div class="wrap sec">
     <h2>Community</h2>
     <div>
       <p>In 2023 I founded Treasure Valley Women in Tech, a free community for women working and studying in tech across the Boise area. It has grown to more than 1,700 members, with events, panels and a partnership with Boise State University.</p>
-      <a class="btn" href="https://tvwomenintech.org">Visit TVWiT</a>
+      <a class="btn dark" href="https://tvwomenintech.org">Visit TVWiT</a>
     </div>
   </div>
 </section>
@@ -202,7 +231,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
       <p>For speaking, consulting, or media requests, email me and I'll get back to you.</p>
       <div class="btns">
         <a class="btn solid" href="mailto:hello@brittanygiudici.com">hello@brittanygiudici.com</a>
-        <a class="btn" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="btn line" href="https://www.linkedin.com/">LinkedIn</a>
       </div>
     </div>
   </div>
