@@ -7,112 +7,92 @@
 <meta name="description" content="Brittany Giudici: executive communications leader, keynote speaker, founder of Treasure Valley Women in Tech and The Giudici Group.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /*
-VOICE: plain, direct, warm; a senior communicator who says it once and clearly
-IDEA: a speaker's event program handed out at a Boise venue, the Treasure Valley at dusk on the cover
-PICTURE: layered Boise foothills at sunset, river glinting through the valley floor
-COLOUR and TYPE: aubergine dusk, foothill mauve, peach sky, one magenta accent; Young Serif + Figtree
-LAYOUT: full-bleed dusk cover, then program-like sections in a single 1100px column with hanging labels
+VOICE: senior, composed, understated; reads like a board bio, not a brochure
+IDEA: the portrait page of an annual report, a leader photographed with quiet confidence
+PICTURE: her headshot, large and tall, beside a calm statement
+COLOUR and TYPE: white, deep ink, one restrained claret; Newsreader display + Public Sans text
+LAYOUT: portrait-led cover, then sections with hanging titles on a single grid, generous air, thin rules
 */
 :root{color-scheme:light dark;
---bg:light-dark(#ffffff,#170f20);
---ink:light-dark(#22172d,#f3e9f0);
---soft:light-dark(#5d4d69,#c7b6cf);
---rule:light-dark(#e6dbe9,#33263f);
---panel:light-dark(#f7eff4,#21162c);
---dusk:#2e1f3e;--mauve:#8a6a9a;--peach:#f6c9b0;--accent:light-dark(#c2185b,#ff6fa3)}
+--bg:light-dark(#ffffff,#121214);
+--ink:light-dark(#1c1b1f,#ecebee);
+--soft:light-dark(#5f5c66,#a9a6b0);
+--rule:light-dark(#e4e2e7,#2c2b31);
+--tint:light-dark(#f6f5f7,#19191c);
+--accent:light-dark(#8c1d40,#e07a99)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:72px;scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Figtree,system-ui,sans-serif;overflow-x:clip}
-a{color:inherit;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
-a:hover{color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.08;text-wrap:balance;margin:0}
-h2{font-size:clamp(30px,4vw,44px)}
-h3{font-size:22px;line-height:1.2}
-p{margin:0 0 1em;max-width:66ch}
-.wrap{max-width:1100px;margin:0 auto}
-.band{padding:clamp(48px,7vw,96px) max(5vw,20px)}
+html{scroll-padding-top:80px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Public Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,3.6vw,40px)}
+h3{font-size:22px;line-height:1.25;font-weight:500}
+p{margin:0 0 1em;max-width:64ch}
+.wrap{max-width:1160px;margin:0 auto;padding:0 max(5vw,20px)}
 
-/* nav */
-header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--dusk) 92%,transparent);backdrop-filter:blur(8px);color:#fff}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:12px max(5vw,20px)}
-.mark{font-family:"Young Serif",serif;font-size:20px;text-decoration:none;color:#fff}
-nav{display:flex;flex-wrap:wrap;gap:4px}
-nav a{color:#f3e2ec;text-decoration:none;font-weight:500;font-size:15px;padding:10px 12px;border-radius:999px}
-nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 24px;min-height:68px}
+.mark{font-family:Newsreader,serif;font-size:21px;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:2px 22px}
+nav a{text-decoration:none;font-size:15px;color:var(--soft);padding:10px 0}
+nav a:hover{color:var(--ink)}
 
 /* cover */
-.cover{position:relative;background:linear-gradient(180deg,#3a2650 0%,#7a4c78 38%,#e39a8f 68%,var(--peach) 100%);color:#fff;overflow:hidden}
-:root[data-theme=dark] .cover{background:linear-gradient(180deg,#120b1b 0%,#2e1f3e 45%,#6b3f63 78%,#a8676f 100%)}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cover{background:linear-gradient(180deg,#120b1b 0%,#2e1f3e 45%,#6b3f63 78%,#a8676f 100%)}}
-.cover .text{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:clamp(56px,9vw,120px) max(5vw,20px) 0}
-.cover h1{font-size:clamp(52px,9vw,112px);line-height:1;letter-spacing:-.01em}
-.cover .lede{font-size:clamp(19px,2.2vw,23px);line-height:1.45;max-width:34ch;margin:22px 0 28px;color:#fbeef3}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,88px);align-items:center;padding-block:clamp(40px,6vw,88px)}
+.portrait{position:relative;aspect-ratio:4/5;background:var(--tint);overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;animation:in 1.2s ease-out both}
+.portrait span{position:absolute;inset:0;display:grid;place-items:center;color:var(--soft);font-size:15px}
+@keyframes in{from{opacity:0}to{opacity:1}}
+.cover h1{font-size:clamp(46px,6.4vw,84px);line-height:1;letter-spacing:-.015em}
+.role{font-size:18px;color:var(--soft);margin:18px 0 28px}
+.lede{font-family:Newsreader,serif;font-size:clamp(22px,2.3vw,28px);line-height:1.35;max-width:30ch;margin:0 0 32px;padding-top:28px;border-top:1px solid var(--rule)}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px}
-.btn.solid{background:#fff;color:var(--dusk)}
-.btn.solid:hover{background:var(--peach);color:var(--dusk)}
-.btn.line{border:2px solid rgba(255,255,255,.7);color:#fff}
-.btn.line:hover{background:rgba(255,255,255,.12);color:#fff}
-.scene{display:block;width:100%;height:clamp(200px,30vw,360px);margin-top:-20px}
-.sun{animation:rise 2.4s ease-out both}
-@keyframes rise{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:not(.solid):hover{border-color:var(--accent)}
+@media(max-width:760px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.portrait{max-width:420px;aspect-ratio:1/1}}
 
-/* intro facts */
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.facts div{padding:22px 20px;border-left:1px solid var(--rule)}
-.facts div:first-child{border-left:0}
-.facts b{display:block;font-family:"Young Serif",serif;font-weight:400;font-size:clamp(28px,3.4vw,38px);line-height:1.1;color:var(--accent)}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.facts div{padding:26px 24px 26px 0}
+.facts div+div{padding-left:24px;border-left:1px solid var(--rule)}
+.facts b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:clamp(28px,3vw,36px);line-height:1.1}
 .facts span{color:var(--soft);font-size:15px}
-@media(max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}}
+@media(max-width:760px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}}
 
-/* program sections: hanging label */
-.sec{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px 56px}
-.sec>h2{position:sticky;top:96px;align-self:start}
-@media(max-width:820px){.sec{grid-template-columns:minmax(0,1fr)}.sec>h2{position:static}}
-.alt{background:var(--panel)}
+/* sections */
+section.s{padding-block:clamp(56px,7vw,104px)}
+.tint{background:var(--tint)}
+.sec{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px 64px}
+.sec>h2{position:sticky;top:100px;align-self:start}
+@media(max-width:860px){.sec{grid-template-columns:minmax(0,1fr)}.sec>h2{position:static}}
+.list{list-style:none;margin:8px 0 0;padding:0}
+.list li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:4px 28px;padding:22px 0;border-top:1px solid var(--rule)}
+.list li:last-child{border-bottom:1px solid var(--rule)}
+.list .k{color:var(--soft);font-size:15px;white-space:nowrap;padding-top:3px}
+.list p{margin:4px 0 0;color:var(--soft);font-size:16px}
+@media(max-width:560px){.list li{grid-template-columns:minmax(0,1fr)}}
+.topics{color:var(--soft);font-size:16px;margin-top:24px}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:8px}
+.svc div{padding:22px 0;border-top:1px solid var(--rule)}
+.svc p{margin:6px 0 0;color:var(--soft);font-size:16px}
+@media(max-width:640px){.svc{grid-template-columns:minmax(0,1fr)}}
 
-/* talks list */
-.talks{list-style:none;margin:0;padding:0}
-.talks li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:4px 24px;padding:22px 0;border-top:1px solid var(--rule)}
-.talks li:last-child{border-bottom:1px solid var(--rule)}
-.talks time{font-weight:600;color:var(--soft);white-space:nowrap;font-size:15px;padding-top:3px}
-.talks .where{color:var(--soft);font-size:15px;margin:4px 0 0}
-.tag{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--accent);color:#fff;margin-left:8px;vertical-align:3px}
-@media(max-width:560px){.talks li{grid-template-columns:minmax(0,1fr)}}
-.topics{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
-.topics li{border:1.5px solid var(--rule);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:500}
-
-/* career */
-.roles{display:grid;gap:0;margin-top:8px}
-.role{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 20px;padding:16px 0;border-top:1px solid var(--rule)}
-.role:last-child{border-bottom:1px solid var(--rule)}
-.role h3{font-size:20px}
-.role .what{grid-column:1/-1;color:var(--soft);font-size:16px;margin:0}
-.role .yrs{color:var(--soft);font-size:15px;white-space:nowrap;padding-top:2px}
-
-/* two-up */
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-@media(max-width:700px){.two{grid-template-columns:minmax(0,1fr)}}
-.card{background:var(--bg);border:1.5px solid var(--rule);border-radius:18px;padding:26px}
-.card h3{margin-bottom:10px}
-.card p:last-child{margin-bottom:0}
-.alt .card{background:var(--bg)}
-
-/* contact */
-.contact{background:var(--dusk);color:#fbeef3}
-.contact h2{color:#fff}
-.contact .sec>div p{color:#e9d6e2}
-.contact a{color:#fff}
-.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-footer{background:var(--dusk);color:#bfa9c4;font-size:14px;padding:22px max(5vw,20px);border-top:1px solid rgba(255,255,255,.12)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
-.draft{font-size:14px;color:var(--soft);font-style:italic}
+.contact{background:var(--ink);color:var(--bg)}
+.contact .sec>div p{color:color-mix(in srgb,var(--bg) 75%,var(--ink))}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.solid{background:var(--bg);color:var(--ink)}
+.contact .btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 60%,var(--ink));font-size:14px;border-top:1px solid color-mix(in srgb,var(--bg) 18%,var(--ink))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-block:22px}
 </style>
 </head>
 <body>
@@ -131,121 +111,98 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 </header>
 
 <main id="top">
-<section class="cover" aria-labelledby="name">
-  <div class="text">
-    <h1 id="name">Brittany Giudici</h1>
-    <p class="lede">I help leaders say what they mean, especially when the stakes are high. Executive communications, keynotes, and building community in Idaho tech.</p>
-    <div class="btns">
-      <a class="btn solid" href="#speaking">Book me to speak</a>
-      <a class="btn line" href="#work">See my work</a>
+<section class="cover">
+  <div class="wrap">
+    <div class="portrait">
+      <span>Headshot</span>
+      <img src="headshot.jpg" alt="Portrait of Brittany Giudici" onerror="this.remove()">
+    </div>
+    <div>
+      <h1>Brittany Giudici</h1>
+      <p class="role">Executive communications leader, keynote speaker, founder</p>
+      <p class="lede">I help leaders say what they mean, especially when the stakes are high.</p>
+      <div class="btns">
+        <a class="btn solid" href="#contact">Get in touch</a>
+        <a class="btn" href="#speaking">Speaking</a>
+      </div>
     </div>
   </div>
-  <svg class="scene" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs>
-      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0" stop-color="#fff4e6"/><stop offset=".35" stop-color="#ffd7b0" stop-opacity=".9"/><stop offset="1" stop-color="#ffb08a" stop-opacity="0"/>
-      </radialGradient>
-      <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b98aa8"/><stop offset="1" stop-color="#94698f"/></linearGradient>
-      <linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d5680"/><stop offset="1" stop-color="#5e3f68"/></linearGradient>
-      <linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3058"/><stop offset="1" stop-color="#2e1f3e"/></linearGradient>
-      <linearGradient id="river" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffd9c2" stop-opacity="0"/><stop offset=".5" stop-color="#ffe6d6"/><stop offset="1" stop-color="#ffd9c2" stop-opacity="0"/></linearGradient>
-    </defs>
-    <g class="sun"><circle cx="1040" cy="200" r="190" fill="url(#glow)"/><circle cx="1040" cy="205" r="62" fill="#fff1e2"/></g>
-    <!-- far foothills -->
-    <path d="M0 210 C120 170 220 150 330 168 S520 120 640 140 S820 96 960 130 S1180 150 1290 120 S1400 130 1440 140 V360 H0Z" fill="url(#h1)"/>
-    <path d="M0 210 C120 170 220 150 330 168 S520 120 640 140 S820 96 960 130 S1180 150 1290 120 S1400 130 1440 140" fill="none" stroke="#e7c1cc" stroke-opacity=".6" stroke-width="2"/>
-    <!-- mid ridge -->
-    <path d="M0 250 C160 214 260 230 380 206 S600 236 720 214 S930 182 1060 216 S1280 232 1440 200 V360 H0Z" fill="url(#h2)"/>
-    <path d="M0 250 C160 214 260 230 380 206 S600 236 720 214 S930 182 1060 216 S1280 232 1440 200" fill="none" stroke="#c48fae" stroke-opacity=".5" stroke-width="2"/>
-    <!-- valley floor and river -->
-    <path d="M0 300 C240 280 480 296 720 286 S1200 276 1440 290 V360 H0Z" fill="url(#h3)"/>
-    <path d="M-20 322 C220 306 420 330 640 314 S1060 300 1460 316" fill="none" stroke="url(#river)" stroke-width="4" stroke-linecap="round"/>
-    <!-- cottonwoods along the river -->
-    <g fill="#24182f">
-      <g id="tree"><ellipse cx="0" cy="-14" rx="11" ry="16"/><rect x="-1.5" y="-2" width="3" height="10"/></g>
-      <use href="#tree" x="140" y="300"/><use href="#tree" x="168" y="304" transform="scale(1)"/><use href="#tree" x="420" y="306"/>
-      <use href="#tree" x="452" y="302"/><use href="#tree" x="880" y="296"/><use href="#tree" x="905" y="300"/>
-      <use href="#tree" x="1210" y="298"/><use href="#tree" x="1236" y="303"/><use href="#tree" x="1262" y="299"/>
-    </g>
-  </svg>
 </section>
 
-<div class="band" style="padding-block:0">
-  <div class="wrap facts">
-    <div><b>15+ years</b><span>in executive comms, PR and marketing</span></div>
+<div class="wrap">
+  <div class="facts">
+    <div><b>15+ years</b><span>in executive communications, PR and marketing</span></div>
     <div><b>80+</b><span>clients through The Giudici Group</span></div>
     <div><b>1,700+</b><span>members in Treasure Valley Women in Tech</span></div>
     <div><b>Boise</b><span>based, working everywhere</span></div>
   </div>
 </div>
 
-<section class="band" id="speaking">
+<section class="s" id="speaking">
   <div class="wrap sec">
     <h2>Speaking</h2>
     <div>
       <p>I speak about purpose, leadership, and how to communicate when it counts. Audiences range from founders and investors to engineers and the next generation of women in tech.</p>
-      <ul class="talks">
-        <li><time datetime="2026-11-19">Nov 19, 2026</time><div><h3>Featured speaker, WiTech Summit <span class="tag">Upcoming</span></h3><p class="where">Boise Centre East. Lead What's Next.</p></div></li>
-        <li><time datetime="2026-10-13">Oct 13, 2026</time><div><h3>Panelist, R-CON</h3><p class="where">Reality Capture Network conference, Boise</p></div></li>
-        <li><time datetime="2026-10-01">Oct 1, 2026</time><div><h3>Keynote: Purpose Driven</h3><p class="where">Boise Entrepreneur Week, JUMP. Invited by Governor Brad Little.</p></div></li>
-        <li><time datetime="2026-09-30">Sep 30, 2026</time><div><h3>Host, Leadership Up Close</h3><p class="where">Treasure Valley Women in Tech panel, Boise Entrepreneur Week</p></div></li>
+      <ul class="list">
+        <li><span class="k">Nov 2026</span><div><h3>Featured speaker, WiTech Summit</h3><p>Boise Centre East</p></div></li>
+        <li><span class="k">Oct 2026</span><div><h3>Panelist, R-CON</h3><p>Reality Capture Network conference, Boise</p></div></li>
+        <li><span class="k">Oct 2026</span><div><h3>Keynote: Purpose Driven</h3><p>Boise Entrepreneur Week. Invited by Governor Brad Little.</p></div></li>
+        <li><span class="k">Sep 2026</span><div><h3>Host, Leadership Up Close</h3><p>Treasure Valley Women in Tech panel, Boise Entrepreneur Week</p></div></li>
       </ul>
-      <ul class="topics" aria-label="Talk topics">
-        <li>Purpose-driven leadership</li><li>Crisis communication</li><li>Executive presence</li><li>Building community from zero</li><li>Women in tech</li>
-      </ul>
+      <p class="topics">Topics: purpose-driven leadership, crisis communication, executive presence, building community from zero, women in tech.</p>
     </div>
   </div>
 </section>
 
-<section class="band alt" id="work">
+<section class="s tint" id="work">
   <div class="wrap sec">
     <h2>Work</h2>
     <div>
       <p>I've spent my career next to senior leaders, shaping what they say and how they say it. At Microsoft Security I built the executive communications function from scratch and led communications through some of the most closely watched moments in the industry.</p>
-      <div class="roles">
-        <div class="role"><h3>Microsoft Security</h3><span class="yrs">Today</span><p class="what">Director of Communications. Executive, internal, external and crisis communications for security leadership.</p></div>
-        <div class="role"><h3>Sage Intacct</h3><span class="yrs">Through acquisition</span><p class="what">Communications through the company's acquisition by Sage.</p></div>
-        <div class="role"><h3>SDL</h3><span class="yrs"></span><p class="what">Corporate communications and PR.</p></div>
-        <div class="role"><h3>Apple</h3><span class="yrs">iPhone 3GS era</span><p class="what">Early career at Apple during the iPhone 3GS launch years.</p></div>
-      </div>
-      <p style="margin-top:20px">Education: Stanford, USC Annenberg, Bridgewater State University.</p>
+      <ul class="list">
+        <li><span class="k">Today</span><div><h3>Microsoft Security</h3><p>Director of Communications. Executive, internal, external and crisis communications for security leadership.</p></div></li>
+        <li><span class="k">Earlier</span><div><h3>Sage Intacct</h3><p>Communications through the company's acquisition by Sage.</p></div></li>
+        <li><span class="k">Earlier</span><div><h3>SDL</h3><p>Corporate communications and PR.</p></div></li>
+        <li><span class="k">Earlier</span><div><h3>Apple</h3><p>Early career during the iPhone 3GS years.</p></div></li>
+      </ul>
+      <p class="topics">Education: Stanford, USC Annenberg, Bridgewater State University.</p>
     </div>
   </div>
 </section>
 
-<section class="band" id="consulting">
+<section class="s" id="consulting">
   <div class="wrap sec">
     <h2>Consulting</h2>
     <div>
       <p>I founded The Giudici Group in 2016 to help companies and leaders with the communications that matter most. More than 80 clients so far.</p>
-      <div class="two">
-        <div class="card"><h3>Crisis management</h3><p>A plan before you need one, and a steady hand when you do.</p></div>
-        <div class="card"><h3>Executive communications</h3><p>Speeches, keynotes, internal messages and leadership voice.</p></div>
-        <div class="card"><h3>PR and marketing</h3><p>Stories that earn attention, told in a way people remember.</p></div>
-        <div class="card"><h3>Corporate communications</h3><p>Announcements, change, and the moments in between.</p></div>
+      <div class="svc">
+        <div><h3>Crisis management</h3><p>A plan before you need one, and a steady hand when you do.</p></div>
+        <div><h3>Executive communications</h3><p>Speeches, keynotes, internal messages and leadership voice.</p></div>
+        <div><h3>PR and marketing</h3><p>Stories that earn attention, told in a way people remember.</p></div>
+        <div><h3>Corporate communications</h3><p>Announcements, change, and the moments in between.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band alt" id="community">
+<section class="s tint" id="community">
   <div class="wrap sec">
     <h2>Community</h2>
     <div>
       <p>In 2023 I founded Treasure Valley Women in Tech, a free community for women working and studying in tech across the Boise area. It has grown to more than 1,700 members, with events, panels and a partnership with Boise State University.</p>
-      <div class="links"><a class="btn line" style="border-color:var(--accent);color:var(--accent)" href="https://tvwomenintech.org">Visit TVWiT</a></div>
+      <a class="btn" href="https://tvwomenintech.org">Visit TVWiT</a>
     </div>
   </div>
 </section>
 
-<section class="band contact" id="contact">
+<section class="s contact" id="contact">
   <div class="wrap sec">
     <h2>Contact</h2>
     <div>
       <p>For speaking, consulting, or media requests, email me and I'll get back to you.</p>
-      <div class="links">
+      <div class="btns">
         <a class="btn solid" href="mailto:hello@brittanygiudici.com">hello@brittanygiudici.com</a>
-        <a class="btn line" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="btn" href="https://www.linkedin.com/">LinkedIn</a>
       </div>
     </div>
   </div>
