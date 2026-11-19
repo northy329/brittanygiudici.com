@@ -17,7 +17,7 @@ COLOUR and TYPE: navy (from her dress) dominant, blush support, white; Newsreade
 LAYOUT: navy cover, blush fact strip, white and navy bands alternating, a pull-quote band mid-page
 */
 :root{color-scheme:light dark;
---navy:#14213d;--deep:#0c1529;--blush:#efcfc8;--blush2:#f8e9e5;
+--navy:#14213d;--deep:#0c1529;--blush:#efcfc8;--blush2:#f8e9e5;--claret:#7a2e45;--rose:#e6bab3;--powder:#dbe4f3;--slate:#2b3f6b;--brass:#c4a46b;
 --bg:light-dark(#ffffff,#0f1626);
 --ink:light-dark(#14213d,#eef0f5);
 --soft:light-dark(#525b70,#a7afc2);
@@ -56,7 +56,7 @@ nav a:hover{color:var(--blush)}
 .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%;animation:in 1.2s ease-out both}
 @keyframes in{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 .cover h1{font-size:clamp(48px,6.6vw,88px);line-height:.98;letter-spacing:-.015em}
-.role{font-size:18px;color:var(--blush);margin:20px 0 32px}
+.role{font-size:18px;color:var(--blush);margin:20px 0 36px}
 .lede{font-family:Newsreader,serif;font-style:italic;font-size:clamp(23px,2.4vw,30px);line-height:1.35;max-width:28ch;margin:0 0 36px;color:#fff}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid currentColor}
@@ -67,14 +67,23 @@ nav a:hover{color:var(--blush)}
 .btn.dark:hover{background:var(--ink);color:var(--bg)}
 @media(max-width:780px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.frame{max-width:400px}.portrait{aspect-ratio:1/1}}
 
+.role b{display:block;color:#fff;font-weight:600;font-size:19px;margin-bottom:4px}
+/* about */
+.about .body{max-width:68ch}
+.about .body p{max-width:none}
+.about .body p:first-child{font-family:Newsreader,serif;font-size:clamp(21px,2vw,24px);line-height:1.45}
+.topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:12px 0 28px}
+.topics div{padding:20px 0;border-top:1px solid var(--rule)}
+.topics p{margin:6px 0 0;color:var(--soft);font-size:16px}
+@media(max-width:640px){.topics{grid-template-columns:minmax(0,1fr)}}
 /* facts */
 .facts{background:var(--blush);color:var(--navy)}
-.facts .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.facts div{padding:30px 24px 30px 0}
-.facts div+div{padding-left:24px;border-left:1px solid rgba(20,33,61,.18)}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.facts .wrap>div{padding:30px 24px 30px 0}
+.facts .wrap>div+div{padding-left:24px;border-left:1px solid rgba(20,33,61,.18)}
 .facts b{display:block;font-family:Newsreader,serif;font-weight:400;font-size:clamp(30px,3.2vw,40px);line-height:1.1}
 .facts span{font-size:15px;color:#3b4560}
-@media(max-width:760px){.facts .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid rgba(20,33,61,.18)}}
+@media(max-width:640px){.facts .wrap{grid-template-columns:minmax(0,1fr)}.facts .wrap>div+div{padding-left:0;border-left:0;border-top:1px solid rgba(20,33,61,.18)}}
 
 /* sections */
 section.s{padding-block:clamp(60px,7.5vw,112px)}
@@ -96,14 +105,38 @@ section.s{padding-block:clamp(60px,7.5vw,112px)}
 .pull{background:var(--blush2);color:var(--navy);position:relative;overflow:hidden}
 :root[data-theme=dark] .pull{background:#1b2540;color:#fff}
 .pull .wrap{position:relative;padding-block:clamp(56px,7vw,96px)}
-.pull blockquote{margin:0;font:400 clamp(28px,3.6vw,46px)/1.2 Newsreader,serif;max-width:22ch;padding-left:clamp(56px,8vw,120px);position:relative;text-wrap:balance}
-.pull blockquote::before{content:"\201C";position:absolute;left:0;top:-.1em;font-size:2.6em;line-height:1;color:var(--navy);opacity:.9}
+.pull blockquote{margin:0;font:400 clamp(28px,3.6vw,46px)/1.2 Newsreader,serif;max-width:30ch;padding-left:0;position:relative;text-wrap:balance}
+.pull blockquote::before{content:none;position:absolute;left:0;top:-.1em;font-size:2.6em;line-height:1;color:var(--navy);opacity:.9}
 :root[data-theme=dark] .pull blockquote::before{color:var(--blush)}
 .pull .shape{position:absolute;right:max(5vw,20px);top:50%;width:clamp(120px,20vw,260px);aspect-ratio:1;translate:0 -50%;border-radius:50%;border:1px solid rgba(20,33,61,.3)}
 .pull .shape::after{content:"";position:absolute;inset:18%;border-radius:50%;background:var(--navy);box-shadow:0 0 0 14px var(--blush)}
 @media(max-width:700px){.pull .shape{display:none}}
 
+/* media */
+.media{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:12px}
+.media a{display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--rule);text-decoration:none;position:relative;background:var(--bg)}
+.media a::before{content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;border-top:2px solid var(--navy);border-left:2px solid var(--navy)}
+:root[data-theme=dark] .media a::before{border-color:var(--blush)}
+.media a:hover{border-color:var(--navy)}
+.media .src{font-size:14px;font-weight:600;color:var(--soft)}
+.media h3{font-size:20px}
+.media .go{margin-top:auto;font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:860px){.media{grid-template-columns:minmax(0,1fr)}}
 /* consulting cards on navy */
+.svc .wide{grid-column:1/-1}
+.svc .wide ul{columns:2;column-gap:40px}
+.svc .wide li{break-inside:avoid}
+.svc .wide li:first-child{margin-top:0}
+.svc .wide ul{margin-top:14px}
+@media(max-width:760px){.svc .wide ul{columns:1}}
+
+.pull .follow{display:block;white-space:nowrap;margin-top:18px;font-style:italic;color:#8c3a4f}
+:root[data-theme=dark] .pull .follow{color:var(--blush)}
+.svc ul{margin:12px 0 0;padding:0 0 0 18px;font-size:15.5px;line-height:1.55;color:#c9d0e0}
+.svc li{margin:5px 0}
+.svc li::marker{color:var(--blush)}
+.navy .firm{font-family:Newsreader,serif;font-size:clamp(21px,2vw,24px);line-height:1.4;color:#fff}
+
 .svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:12px}
 .svc div{padding:26px;border:1px solid rgba(255,255,255,.16);position:relative}
 .svc div::before{content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;border-top:2px solid var(--blush);border-left:2px solid var(--blush)}
@@ -116,6 +149,32 @@ section.s{padding-block:clamp(60px,7.5vw,112px)}
 .contact p{color:#c9d0e0}
 footer{background:var(--deep);color:#8f99b1;font-size:14px;border-top:1px solid rgba(255,255,255,.1)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-block:22px}
+
+/* expanded palette */
+.cover{background:linear-gradient(135deg,var(--deep) 0%,var(--navy) 45%,var(--slate) 100%)}
+.frame::after{border-color:var(--brass)}
+.facts b{color:var(--claret)}
+.sec>h2::after{border-color:var(--brass);background:radial-gradient(circle,var(--brass) 0 5px,transparent 6px)}
+.light-band{--ink:#14213d;--soft:#46506a;--rule:rgba(20,33,61,.16);--bg:#fff;color:#14213d}
+.powder{background:var(--powder)}
+.rose{background:var(--rose)}
+.pull{background:var(--claret)!important;color:#fff!important}
+.pull blockquote{color:#fff}
+.pull .follow{color:var(--blush)!important}
+#speaking .topics{gap:16px}
+#speaking .topics div{background:#fff;border:0;border-top:3px solid var(--slate);padding:22px}
+#speaking .topics div:nth-child(2){border-top-color:var(--claret)}
+#speaking .topics div:nth-child(3){border-top-color:var(--brass)}
+#speaking .topics div:nth-child(4){border-top-color:var(--rose)}
+.svc div{background:rgba(43,63,107,.45)}
+.svc div::before{border-color:var(--brass)}
+.svc li::marker{color:var(--brass)}
+.svc .wide:first-child{background:var(--slate)}
+.media a{border-top:3px solid var(--slate)}
+.media a::before{display:none}
+.media a:nth-child(3n+2){border-top-color:var(--claret)}
+.media a:nth-child(3n+3){border-top-color:var(--brass)}
+.contact{background:linear-gradient(135deg,var(--deep),var(--navy) 60%,#3a2440)}
 </style>
 </head>
 <body>
@@ -124,10 +183,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
   <div class="wrap">
     <a class="mark" href="#top">Brittany Giudici</a>
     <nav aria-label="Main">
+      <a href="#about">About</a>
       <a href="#speaking">Speaking</a>
-      <a href="#work">Work</a>
-      <a href="#consulting">Consulting</a>
-      <a href="#community">Community</a>
+      <a href="#consulting">The Giudici Group</a>
+      <a href="#community">TV WiT</a>
+      <a href="#media">Media</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -141,11 +201,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
     </div>
     <div>
       <h1>Brittany Giudici</h1>
-      <p class="role">Executive communications leader, keynote speaker, founder</p>
-      <p class="lede">I help leaders say what they mean, especially when the stakes are high.</p>
+      <p class="role"><b>Director of Communications, Microsoft Security</b>Keynote speaker. Founder of The Giudici Group and Treasure Valley Women in Tech.</p>
       <div class="btns">
-        <a class="btn solid" href="#contact">Get in touch</a>
-        <a class="btn line" href="#speaking">Speaking</a>
+        <a class="btn solid" href="#about">Meet Brittany</a>
+        <a class="btn line" href="#contact">Get in touch</a>
       </div>
     </div>
   </div>
@@ -153,73 +212,120 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
 
 <div class="facts">
   <div class="wrap">
-    <div><b>15+ years</b><span>in executive communications, PR and marketing</span></div>
-    <div><b>80+</b><span>clients through The Giudici Group</span></div>
-    <div><b>1,700+</b><span>members in Treasure Valley Women in Tech</span></div>
-    <div><b>Boise</b><span>based, working everywhere</span></div>
+    <div><b>18 years</b><span>in executive communications, PR, and marketing at high-growth tech companies like Apple, Sage, and Microsoft</span></div>
+    <div><b>250+</b><span>clients through The Giudici Group</span></div>
+    <div><b>800+</b><span>members in Treasure Valley Women in Tech</span></div>
   </div>
 </div>
 
-<section class="s" id="speaking">
+<section class="s about" id="about">
   <div class="wrap sec">
-    <h2>Speaking</h2>
-    <div>
-      <p>I speak about purpose, leadership, and how to communicate when it counts. Audiences range from founders and investors to engineers and the next generation of women in tech.</p>
-      <ul class="list">
-        <li><span class="k">Nov 2026</span><div><h3>Featured speaker, WiTech Summit</h3><p>Boise Centre East</p></div></li>
-        <li><span class="k">Oct 2026</span><div><h3>Panelist, R-CON</h3><p>Reality Capture Network conference, Boise</p></div></li>
-        <li><span class="k">Oct 2026</span><div><h3>Keynote: Purpose Driven</h3><p>Boise Entrepreneur Week. Invited by Governor Brad Little.</p></div></li>
-        <li><span class="k">Sep 2026</span><div><h3>Host, Leadership Up Close</h3><p>Treasure Valley Women in Tech panel, Boise Entrepreneur Week</p></div></li>
-      </ul>
-      <p class="note">Topics: purpose-driven leadership, crisis communication, executive presence, building community from zero, women in tech.</p>
+    <h2>Meet Brittany</h2>
+    <div class="body">
+      <p>My career in technology started right out of college, when Apple hired me to do marketing and communications for the iPhone 3GS on its Worldwide Sales team in Cupertino. From there, my work took me all over the world with tech companies focused on online retail, human and AI-generated language translation, and multinational enterprise software.</p>
+      <p>Today I'm Director of Communications for Microsoft Security. I've owned and driven communications for its global cybersecurity division and for Charlie Bell, Microsoft's executive vice president, a technology luminary, and a cofounder of Amazon Web Services. I've led communications through some of the most high-profile moments in Microsoft's recent security history: the Storm-0558 nation-state attack and the Cyber Safety Review Board report that followed, the Midnight Blizzard breach, and the launch of the Secure Future Initiative, Microsoft's largest cybersecurity engineering effort to date. I've also led executive and employee communications for Microsoft Security through multiple geopolitical conflicts, including the Russia-Ukraine and Israel-Hamas wars.</p>
+      <p>I founded Treasure Valley Women in Tech in 2023 because I believe southwest Idaho is full of women who bring unique and valued gifts to the technology industry and the communities they serve. Today the nonprofit has grown to more than 800 members.</p>
+      <p>I'm a regular keynote speaker on leadership, organizational transformation, crisis communications, and purpose-driven careers. I'm also the founder and president of The Giudici Group, a communications consultancy I launched in 2016 that has served more than 250 clients across crisis management, PR and marketing, and corporate communications.</p>
+      <p>I live in the Treasure Valley with my husband and our two young daughters.</p>
     </div>
   </div>
 </section>
 
 <section class="pull" aria-label="Philosophy">
   <div class="wrap">
-    <blockquote>The words a leader chooses in a hard moment are the ones people remember.</blockquote>
-    <div class="shape" aria-hidden="true"></div>
+    <blockquote>The words a leader chooses in a hard moment are the ones people remember.<span class="follow">I help you choose them.</span></blockquote>
   </div>
 </section>
 
-<section class="s" id="work">
+<section class="s light-band powder" id="speaking">
   <div class="wrap sec">
-    <h2>Work</h2>
+    <h2>Speaking</h2>
     <div>
-      <p>I've spent my career next to senior leaders, shaping what they say and how they say it. At Microsoft Security I built the executive communications function from scratch and led communications through some of the most closely watched moments in the industry.</p>
-      <ul class="list">
-        <li><span class="k">Today</span><div><h3>Microsoft Security</h3><p>Director of Communications. Executive, internal, external and crisis communications for security leadership.</p></div></li>
-        <li><span class="k">Earlier</span><div><h3>Sage Intacct</h3><p>Communications through the company's acquisition by Sage.</p></div></li>
-        <li><span class="k">Earlier</span><div><h3>SDL</h3><p>Corporate communications and PR.</p></div></li>
-        <li><span class="k">Earlier</span><div><h3>Apple</h3><p>Early career during the iPhone 3GS years.</p></div></li>
-      </ul>
-      <p class="note">Education: Stanford, USC Annenberg, Bridgewater State University.</p>
+      <p>I speak to founders, executives, engineers, and the next generation of women in tech. Talks are tailored to the room. I'm available for domestic and international speaking engagements.</p>
+      <div class="topics">
+        <div><h3>Leadership</h3><p>What it takes to lead with clarity and earn trust.</p></div>
+        <div><h3>Organizational transformation</h3><p>Bringing people with you through big change.</p></div>
+        <div><h3>Crisis communications</h3><p>Lessons from leading through nation-state attacks and global conflict.</p></div>
+        <div><h3>Purpose-driven careers</h3><p>Building a career, and a life, around what matters to you.</p></div>
+      </div>
+      <a class="btn dark" href="#contact">Book me to speak</a>
     </div>
   </div>
 </section>
 
 <section class="s navy" id="consulting">
   <div class="wrap sec">
-    <h2>Consulting</h2>
+    <h2>The Giudici Group</h2>
     <div>
-      <p>I founded The Giudici Group in 2016 to help companies and leaders with the communications that matter most. More than 80 clients so far.</p>
+      <p class="firm">The Giudici Group is a boutique communications consulting and advisory firm.</p>
+      <p>Since 2016, we have advised 250+ clients on crisis management, PR, and marketing, along with internal, external, and corporate communications, developing and operationalizing plans from strategy through execution.</p>
+      <p>Clients include YouTube creators, leading technology executives, global influencers, megachurch leadership, and political figures.</p>
       <div class="svc">
-        <div><h3>Crisis management</h3><p>A plan before you need one, and a steady hand when you do.</p></div>
-        <div><h3>Executive communications</h3><p>Speeches, keynotes, internal messages and leadership voice.</p></div>
-        <div><h3>PR and marketing</h3><p>Stories that earn attention, told in a way people remember.</p></div>
-        <div><h3>Corporate communications</h3><p>Announcements, change, and the moments in between.</p></div>
+        <div class="wide"><h3>Executive communications</h3><p>The center of my work. For 18 years I've been the editor-in-chief for executive voice, helping leaders sound like themselves, at their best, in every room that matters.</p>
+          <ul>
+            <li>Executive voice and narrative architecture: what a leader stands for and how they say it</li>
+            <li>Keynotes and speechwriting for flagship events, conferences, and customer moments, from talk track and deck to on-site support and follow-up</li>
+            <li>Technical storytelling that turns complex AI, cybersecurity, and software topics into clear, high-impact stories</li>
+            <li>Executive readiness for media interviews, customer briefings, internal forums, and confidential leadership briefings</li>
+            <li>Preparation for engagements with senior government officials, geopolitical leaders, and heads of state</li>
+            <li>Internal moments: all-hands, leadership memos, organizational announcements, and change communications</li>
+            <li>Thought leadership: op-eds, bylines, blogs, and executive social content</li>
+            <li>Executive communications calendars, editorial strategy, and planning rhythms that keep a leader visible and consistent</li>
+            <li>Counsel through organizational transitions, leadership changes, and sensitive issues</li>
+            <li>Building executive communications functions from zero into repeatable, programmatic systems</li>
+          </ul></div>
+        <div class="wide"><h3>Crisis management</h3><p>Steady counsel before, during, and after the moments that test a reputation.</p>
+          <ul>
+            <li>Risk assessment, scenario planning, and crisis playbooks before anything happens</li>
+            <li>Rapid situation assessment and a clear response plan in the first hours</li>
+            <li>Holding statements, media responses, and talking points</li>
+            <li>Spokesperson preparation and media training for executives</li>
+            <li>Employee, customer, partner, and stakeholder communications</li>
+            <li>Ongoing counsel through resolution, then reputation recovery and lessons learned</li>
+          </ul></div>
+
+        <div><h3>PR and marketing</h3><p>Stories that earn attention and hold it.</p>
+          <ul>
+            <li>Communications strategy and messaging frameworks</li>
+            <li>Media relations, pitching, and interview preparation</li>
+            <li>Launch planning for products, companies, and initiatives</li>
+            <li>Personal brand building for creators and public figures</li>
+          </ul></div>
+        <div><h3>Internal and corporate communications</h3><p>Keeping people informed and aligned through change.</p>
+          <ul>
+            <li>Change communications for reorganizations, mergers, and acquisitions</li>
+            <li>Employee communications plans and channel strategy</li>
+            <li>Corporate announcements and stakeholder updates</li>
+            <li>Plans built from strategy through execution</li>
+          </ul></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="s" id="community">
+<section class="s light-band rose" id="community">
   <div class="wrap sec">
-    <h2>Community</h2>
+    <h2>Treasure Valley Women in Tech</h2>
     <div>
-      <p>In 2023 I founded Treasure Valley Women in Tech, a free community for women working and studying in tech across the Boise area. It has grown to more than 1,700 members, with events, panels and a partnership with Boise State University.</p>
-      <a class="btn dark" href="https://tvwomenintech.org">Visit TVWiT</a>
+      <p>I founded Treasure Valley Women in Tech in 2023 as a nonprofit for women working and studying in tech across southwest Idaho, with events, panels, and a partnership with Boise State University.</p>
+      <a class="btn dark" href="https://tvwomenintech.org">Visit Treasure Valley Women in Tech</a>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="media">
+  <div class="wrap sec">
+    <h2>Media</h2>
+    <div>
+      <p>Features, interviews, and appearances.</p>
+      <div class="media">
+        <a href="https://www.linkedin.com/posts/brittanygiudici_rcon2026-leadership-boise-activity-7523876623650164737-PWTP"><span class="src">R-CON 2026</span><h3>Built Different panel at R-CON 2026</h3><span class="go">See the post</span></a>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:0694d951-2226-4cd6-8c47-af7bca035f65"><span class="src">Greet Eagle Magazine</span><h3>Featured in Greet Eagle Magazine</h3><span class="go">Read the feature</span></a>
+        <a href="https://youtu.be/Dn2a8mv_yW8"><span class="src">Matthew Byrd Podcast</span><h3>Guest on the Matthew Byrd Podcast</h3><span class="go">Watch the episode</span></a>
+        <a href="https://www.bridgew.edu/stories/2026/how-bridgewater-state-connection-helped-launch-brittany-giudicis-career-tech"><span class="src">Bridgewater State University</span><h3>How a Bridgewater State connection helped launch Brittany Giudici's career in tech</h3><span class="go">Read the story</span></a>
+        <a href="https://www.idahotechcouncil.org/witech-summit-launches-with-impact-tech-powered-women-led"><span class="src">Idaho Technology Council</span><h3>WiTECH Summit launches with impact: Tech Powered. Women Led.</h3><span class="go">Read the story</span></a>
+        <a href="https://www.idahotechcouncil.org/witech-summit"><span class="src">WiTECH Summit 2026</span><h3>Purpose Driven: Community, Clarity, and the Choice to Build Where You Are</h3><span class="go">See the program</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -228,10 +334,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
   <div class="wrap sec">
     <h2>Contact</h2>
     <div>
-      <p>For speaking, consulting, or media requests, email me and I'll get back to you.</p>
+      <p>For speaking, consulting, or media requests, message me on LinkedIn. I respond to speaking inquiries within two business days. I'm available for domestic and international engagements.</p>
       <div class="btns">
-        <a class="btn solid" href="mailto:hello@brittanygiudici.com">hello@brittanygiudici.com</a>
-        <a class="btn line" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="btn solid" href="https://www.linkedin.com/in/brittanygiudici/">Message me on LinkedIn</a>
       </div>
     </div>
   </div>
@@ -239,7 +344,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;p
 </main>
 
 <footer>
-  <div class="wrap"><span>© 2026 Brittany Giudici</span><span>Boise, Idaho</span></div>
+  <div class="wrap"><span>© 2026 Brittany Giudici</span><a href="https://www.linkedin.com/in/brittanygiudici/">LinkedIn</a></div>
 </footer>
 
 </body>
